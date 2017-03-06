@@ -219,4 +219,13 @@ module ISO8583
   YYMMCodec         = _date_codec("%y%m")
   MMDDCodec         = _date_codec("%m%d")
 
+  EBCDIC_Codec = Codec.new
+  EBCDIC_Codec.encoder = -> (ascii_str) {
+    raise ISO8583Exception.new("#{ascii_str} must be a valid string") unless ascii_str.is_a?(String)
+    ISO8583.ascii2ebcdic(ascii_str)
+  }
+  EBCDIC_Codec.decoder = -> (ebcdic_str) {
+    ebcdic2ascii(ebcdic_str)
+  }
+
 end
