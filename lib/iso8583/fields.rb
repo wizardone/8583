@@ -177,13 +177,13 @@ module ISO8583
 
   # Two byte variable length EBCDIC encoded
   LLVAR_EBCDIC  = Field.new
-  LLVAR_EBCDIC.length = LL
+  LLVAR_EBCDIC.length = 2
   LLVAR_EBCDIC.codec  = EBCDIC_Codec
   #LLVARN_EBCDIC.padding = PADDING_LEFT_JUSTIFIED_SPACES
 
   # Three byte variable length EBCDIC encoded
   LLLVAR_EBCDIC = Field.new
-  LLLVAR_EBCDIC.length = LL
+  LLLVAR_EBCDIC.length = 2
   LLLVAR_EBCDIC.codec  = EBCDIC_Codec
   #LLLVARN_EBCDIC.padding = PADDING_LEFT_JUSTIFIED_SPACES
 
